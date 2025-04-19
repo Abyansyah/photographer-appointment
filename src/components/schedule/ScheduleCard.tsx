@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import { StarIcon, Calendar, Clock } from 'lucide-react';
+import { StarIcon, Calendar, Clock, MapPin, User } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardFooter, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
@@ -33,19 +33,32 @@ export const ScheduleCard = ({ schedule }: { schedule: Schedule }) => (
           <span className="text-sm">{schedule.averageRating}</span>
         </div>
       </CardTitle>
-
+      <div className="flex flex-wrap gap-1 mt-1">
+        {schedule.category.map((cat, idx) => (
+          <Badge key={idx} variant="outline" className="text-xs">
+            {cat}
+          </Badge>
+        ))}
+      </div>
       <p className="text-sm text-muted-foreground mt-2">{schedule.description}</p>
     </CardHeader>
 
-    <CardContent className="flex-1 bg-white dark:bg-gray-950 pt-0">
-      <div className="flex items-center gap-2 text-sm text-muted-foreground mt-3"></div>
-      <div className="flex items-center gap-2 text-sm text-muted-foreground mt-1">
+    <CardContent className="grid grid-cols-2 gap-2 bg-white dark:bg-gray-950 pt-0">
+      <div className="flex items-center gap-2 text-sm text-muted-foreground ">
+        <MapPin className="h-4 w-4 text-purple-500" />
+        <span>{schedule.location}</span>
+      </div>
+      <div className="flex items-center gap-2 text-sm text-muted-foreground ">
         <Calendar className="h-4 w-4 text-indigo-500" />
         <span>{schedule.date}</span>
       </div>
-      <div className="flex items-center gap-2 text-sm text-muted-foreground mt-1">
+      <div className="flex items-center gap-2 text-sm text-muted-foreground ">
         <Clock className="h-4 w-4 text-pink-500" />
         <span>{schedule.timeSlot}</span>
+      </div>
+      <div className="flex items-center gap-2 text-sm text-muted-foreground ">
+        <User className="h-4 w-4 text-green-500" />
+        <span>{schedule.experience}+ years</span>
       </div>
     </CardContent>
 

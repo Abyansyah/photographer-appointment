@@ -7,6 +7,7 @@ import { Input } from '../ui/input';
 import { useAuth } from '@/auth/useAuth';
 import axiosInstance from '@/config/axiosInstance';
 import { FaRegCircleXmark } from 'react-icons/fa6';
+import { toast } from 'sonner';
 
 export default function LoginForm() {
   const [email, setEmail] = useState('');
@@ -20,6 +21,9 @@ export default function LoginForm() {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsLoading(true);
+    toast.loading('Login...', {
+      id: 'login-toast',
+    });
     try {
       const response = await axiosInstance.post('/users/login', {
         email,
@@ -29,8 +33,14 @@ export default function LoginForm() {
       login(token);
       navigate('/');
       setError(false);
+      toast.success('Login Berhasil!', {
+        id: 'login-toast',
+      });
     } catch {
       setError(true);
+      toast.error('Email dan/atau password Anda salah, silakan coba lagi', {
+        id: 'login-toast',
+      });
     } finally {
       setIsLoading(false);
     }
@@ -73,7 +83,7 @@ export default function LoginForm() {
             </button>
           </div>
         </div>
-        <Button type="submit" disabled={isLoading}>
+        <Button type="submit" disabled={isLoading || !email || !password || password.length < 6}>
           {isLoading ? (
             <>
               <Loader className="mr-2 animate-spin" />

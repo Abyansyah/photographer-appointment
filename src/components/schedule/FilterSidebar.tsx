@@ -38,7 +38,7 @@ export const FilterSidebar = ({
       </CardHeader>
       <CardContent className="space-y-4">
         <div className="space-y-2 w-full">
-          <label className="text-sm font-medium">Availability</label>
+          <label className="text-sm font-medium mb-2">Availability</label>
           <Select value={availabilityFilter || 'all'} onValueChange={onAvailabilityChange}>
             <SelectTrigger>
               <SelectValue placeholder="Select availability" />
