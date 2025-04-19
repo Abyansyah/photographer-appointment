@@ -1,54 +1,98 @@
-# React + TypeScript + Vite
+# Photographer Appointment
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A simple frontend application for managing photography appointment schedules.
 
-Currently, two official plugins are available:
+## 📦 Setup Instructions
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+#### Clone the repository
 
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
-
-```js
-export default tseslint.config({
-  extends: [
-    // Remove ...tseslint.configs.recommended and replace with this
-    ...tseslint.configs.recommendedTypeChecked,
-    // Alternatively, use this for stricter rules
-    ...tseslint.configs.strictTypeChecked,
-    // Optionally, add this for stylistic rules
-    ...tseslint.configs.stylisticTypeChecked,
-  ],
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
+```bash
+   git clone https://github.com/Abyansyah/photographer-appointment
+   cd photographer-appointment
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+#### Install dependencies
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+- Using Yarn:
 
-export default tseslint.config({
-  plugins: {
-    // Add the react-x and react-dom plugins
-    'react-x': reactX,
-    'react-dom': reactDom,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended typescript rules
-    ...reactX.configs['recommended-typescript'].rules,
-    ...reactDom.configs.recommended.rules,
-  },
-})
+```bash
+  yarn install
 ```
+
+- Or using npm:
+
+```bash
+  npm install
+```
+
+#### Run the development server
+
+```bash
+  yarn dev
+```
+
+#### Environment Variables
+
+```bash
+  cp .env.example .env
+```
+
+#### You can configure your API base URL and other secrets in the .env file:
+
+```bash
+VITE_API_BASE_URL=https://be-placement-test.vercel.app/api/v1
+```
+
+#### Account Login
+
+- **Username**: `user@gmail.com`
+- **Password**: `rahasia123`
+
+## 💡 Assumptions Made
+
+- The backend API is publicly deployed and built using Express.js, with Supabase as the database.
+
+- All necessary backend endpoints (e.g., login, register, schedule management) are available and correctly integrated with the frontend.
+
+- Users are assumed to be authenticated before accessing protected features; a login flow is implemented.
+
+- Node.js and a package manager (Yarn or npm) are installed on the developer's machine.
+
+## ⚠️ Known Limitations or Future Improvements
+
+#### 🛑 Known Limitations
+
+- Limited unit testing has been implemented so far.
+
+- The application currently supports only one user role (regular user).
+
+- SEO optimization is not yet implemented (e.g., meta tags, titles, Open Graph, etc.).
+
+#### 🚀 Future Improvements
+
+- Add user registration feature.
+
+- Integrate real-time capabilities using technologies like Socket.IO or Supabase Realtime.
+
+- Implement proper testing using Vitest or Cypress.
+
+- Improve UI design for better modern look and responsiveness.
+
+- Add admin role support with separate access and controls.
+- Implement SEO best practices for better discoverability and social sharing.
+
+## 🚀 Live Demo
+
+You can try the deployed version here:  
+[https://photographer-appointment.vercel.app/](https://photographer-appointment.vercel.app/)
+
+## 🔐 Demo Credentials
+
+You can use the following credentials to log in:
+
+- **Username**: `user@gmail.com`
+- **Password**: `rahasia123`
+
+##
+
+![Logo](https://dev-to-uploads.s3.amazonaws.com/uploads/articles/th5xamgrr6se0x5ro4g6.png)
