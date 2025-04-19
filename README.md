@@ -95,4 +95,5 @@ You can use the following credentials to log in:
 
 ##
 
-![Logo](https://dev-to-uploads.s3.amazonaws.com/uploads/articles/th5xamgrr6se0x5ro4g6.png)
+![logo (2)](https://github.com/user-attachments/assets/468477f6-3062-4d40-802f-adfdc4af7468)
+
