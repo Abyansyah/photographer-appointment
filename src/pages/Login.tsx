@@ -14,7 +14,8 @@ export default function Login() {
       </div>
 
       <div className="text-center mb-8">
-        <h1 className="text-2xl font-bold">PhotoBooking</h1>
+        <img src="/logo.svg" alt="Logo" className="w-16 h-16 mx-auto mb-4" />
+        <h1 className="text-2xl font-bold">FotoKu</h1>
       </div>
 
       <div className="bg-white shadow rounded-lg w-full max-w-md p-6">

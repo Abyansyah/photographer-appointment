@@ -63,7 +63,6 @@ export default function Appointment() {
             </svg>
             Back to Schedule
           </Button>
-          {/* <h1 className="text-3xl font-bold">Book Appointment</h1> */}
         </div>
 
         {showSuccess && <BookingSuccessModal />}

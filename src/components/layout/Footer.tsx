@@ -76,7 +76,7 @@ export function Footer() {
               </li>
               <li className="flex items-center gap-2 text-sm text-muted-foreground">
                 <Mail className="h-4 w-4" />
-                <span>info@photobooking.com</span>
+                <span>info@FotoKu.com</span>
               </li>
             </ul>
             <div className="flex space-x-4 mt-4">
@@ -102,7 +102,7 @@ export function Footer() {
           </div>
         </div>
         <div className="mt-10 border-t pt-8 text-center">
-          <p className="text-sm text-muted-foreground">© {new Date().getFullYear()} PhotoBooking. All rights reserved.</p>
+          <p className="text-sm text-muted-foreground">© {new Date().getFullYear()} FotoKu. All rights reserved.</p>
         </div>
       </div>
     </footer>

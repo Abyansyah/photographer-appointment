@@ -1,6 +1,6 @@
 import { Sheet, SheetTrigger, SheetContent, SheetClose } from '@/components/ui/sheet';
 import { Button } from '@/components/ui/button';
-import { Menu, LogOut, Camera } from 'lucide-react';
+import { Menu, LogOut } from 'lucide-react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { useAuthContext } from '@/auth/AuthContext';
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
@@ -23,11 +23,9 @@ export function Navbar() {
       <nav className="max-w-7xl mx-auto">
         <div className="flex items-center justify-between p-4">
           <Link to="/" className="flex items-center space-x-2">
-            <Camera size={26} className='text-purple-500' />
-            <span className="font-bold text-xl bg-gradient-to-r from-purple-600 to-purple-400 bg-clip-text text-transparent">PhotoBooking</span>
+            <img src="/logo.svg" alt="Logo" className="w-8 h-8" />
+            <span className="font-bold text-xl bg-gradient-to-r from-purple-600 to-purple-400 bg-clip-text text-transparent">FotoKu</span>
           </Link>
-
-          {/* Desktop Navigation */}
           <ul className="hidden md:flex items-center gap-10 text-card-foreground">
             {ListMenu.map((item: MenuType, index: number) => (
               <li key={index} className="relative">
