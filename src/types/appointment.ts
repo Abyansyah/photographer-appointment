@@ -6,10 +6,12 @@ export interface Review {
 }
 
 export interface ScheduleSummary {
-  avatar?: string; 
+  avatar?: string;
   photographerName: string;
   date: string;
   timeSlot: string;
+  location: string;
+  category: string[];
 }
 
 export interface Appointment {

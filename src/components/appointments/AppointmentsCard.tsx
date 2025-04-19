@@ -1,6 +1,6 @@
 import { Card } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
-import { Calendar, Clock, Star } from 'lucide-react';
+import { Calendar, Clock, MapPin, Star } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Appointment } from '@/types/appointment';
 import { formatDate } from '@/lib/utils';
@@ -18,6 +18,13 @@ export const AppointmentsCard = ({ appointment, onReview }: { appointment: Appoi
             </Avatar>
             <div>
               <h3 className="font-semibold">{appointment?.Schedule?.photographerName}</h3>
+              <div className="flex flex-wrap gap-1 mt-1">
+                {appointment.Schedule?.category.map((cat, idx) => (
+                  <Badge key={idx} variant="outline" className="text-xs">
+                    {cat}
+                  </Badge>
+                ))}
+              </div>
             </div>
           </div>
           <Badge
@@ -37,10 +44,10 @@ export const AppointmentsCard = ({ appointment, onReview }: { appointment: Appoi
             <Clock className="h-4 w-4 text-indigo-500" />
             <span>{appointment?.Schedule?.timeSlot}</span>
           </div>
-          {/* <div className="flex items-center gap-2 text-sm">
-          <MapPin className="h-4 w-4 text-pink-500" />
-          <span>{appointment.location}</span>
-        </div> */}
+          <div className="flex items-center gap-2 text-sm">
+            <MapPin className="h-4 w-4 text-pink-500" />
+            <span>{appointment?.Schedule?.location}</span>
+          </div>
         </div>
 
         {appointment.notes && (

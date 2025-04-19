@@ -12,6 +12,8 @@ export interface Appointment {
     date: string;
     timeSlot: string;
     avatar?: string;
+    location: string;
+    category: string[];
   };
   Reviews: Array<{
     id: string;

@@ -12,6 +12,8 @@ export interface ScheduleFilters {
   isAvailable?: string;
   timeSlot?: string;
   sortDirection?: 'asc' | 'desc';
+  location?: string;
+  category?: string;
   schedules?: ScheduleType[];
 }
 
@@ -42,8 +44,6 @@ export default function Schedule() {
     }));
   };
 
-  console.log(schedules);
-
   return (
     <main className="flex-1 container py-8">
       <h1 className="text-3xl font-bold mb-8">Photography Sessions</h1>
@@ -52,10 +52,14 @@ export default function Schedule() {
           availabilityFilter={filters?.isAvailable || ''}
           timeSlotFilter={filters?.timeSlot || ''}
           sortBy={filters?.sortDirection || ''}
+          locationFilter={filters?.location || 'All'}
+          categoryFilter={filters?.category || 'All'}
           timeSlots={timeSlots}
           onAvailabilityChange={(value) => handleFilterChange({ isAvailable: value === 'all' ? undefined : value })}
           onTimeSlotChange={(value) => handleFilterChange({ timeSlot: value === 'all' ? undefined : value })}
           onSortChange={(value) => handleFilterChange({ sortDirection: value as 'asc' | 'desc' })}
+          onLocationChange={(value) => handleFilterChange({ location: value === 'All' ? undefined : value })}
+          onCategoryChange={(value) => handleFilterChange({ category: value === 'All' ? undefined : value })}
           onReset={resetFilters}
         />
 

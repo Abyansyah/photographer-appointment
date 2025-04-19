@@ -11,6 +11,8 @@ export const ScheduleService = {
         isAvailable: params.isAvailable,
         timeSlot: params.timeSlot,
         sortDirection: params.sortDirection,
+        location: params.location,
+        category: params.category,
       },
     });
 

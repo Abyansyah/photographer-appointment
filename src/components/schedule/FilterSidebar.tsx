@@ -2,23 +2,32 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '.
 import { Button } from '../ui/button';
 import { RotateCcw, Filter } from 'lucide-react';
 import { Card, CardContent, CardHeader, CardTitle } from '../ui/card';
+import { dataCategory, dataLocation } from '@/constant/schedule';
 
 export const FilterSidebar = ({
   availabilityFilter,
   timeSlotFilter,
   sortBy,
   timeSlots,
+  locationFilter,
+  categoryFilter,
   onAvailabilityChange,
   onTimeSlotChange,
   onSortChange,
+  onLocationChange,
+  onCategoryChange,
   onReset,
 }: {
   availabilityFilter: string;
   timeSlotFilter: string;
   sortBy: string;
+  locationFilter: string;
+  categoryFilter: string;
   timeSlots: string[];
   onAvailabilityChange: (value: string) => void;
   onTimeSlotChange: (value: string) => void;
+  onLocationChange: (value: string) => void;
+  onCategoryChange: (value: string) => void;
   onSortChange: (value: string) => void;
   onReset: () => void;
 }) => (
@@ -61,6 +70,38 @@ export const FilterSidebar = ({
               {timeSlots.map((slot, index) => (
                 <SelectItem key={index} value={slot}>
                   {slot}
+                </SelectItem>
+              ))}
+            </SelectContent>
+          </Select>
+        </div>
+
+        <div className="space-y-2">
+          <label className="text-sm font-medium">Location</label>
+          <Select value={locationFilter || 'All'} onValueChange={onLocationChange}>
+            <SelectTrigger>
+              <SelectValue placeholder="Select location" />
+            </SelectTrigger>
+            <SelectContent>
+              {dataLocation.map((loc) => (
+                <SelectItem key={loc.value} value={loc.value as string}>
+                  {loc.label}
+                </SelectItem>
+              ))}
+            </SelectContent>
+          </Select>
+        </div>
+
+        <div className="space-y-2">
+          <label className="text-sm font-medium">Category</label>
+          <Select value={categoryFilter || 'All'} onValueChange={onCategoryChange}>
+            <SelectTrigger>
+              <SelectValue placeholder="Select category" />
+            </SelectTrigger>
+            <SelectContent>
+              {dataCategory.map((cat) => (
+                <SelectItem key={cat.value} value={cat.value}>
+                  {cat.label}
                 </SelectItem>
               ))}
             </SelectContent>
