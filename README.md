@@ -68,7 +68,7 @@ VITE_API_BASE_URL=https://be-placement-test.vercel.app/api/v1
 
 - SEO optimization is not yet implemented (e.g., meta tags, titles, Open Graph, etc.).
 
-#### 🚀 Future Improvements
+#### ✨ Future Improvements
 
 - Add user registration feature.
 
