@@ -95,5 +95,6 @@ You can use the following credentials to log in:
 
 ##
 
-![logo (2)](https://github.com/user-attachments/assets/468477f6-3062-4d40-802f-adfdc4af7468)
+![Desain tanpa judul (3)](https://github.com/user-attachments/assets/857b3b32-d5b3-42bf-a3c6-5cf8835113a4)
+
 
