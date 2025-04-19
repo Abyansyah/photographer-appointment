@@ -2,9 +2,10 @@ import { defineConfig } from 'vite';
 import react from '@vitejs/plugin-react';
 import tailwindcss from '@tailwindcss/vite';
 import path from 'path';
+import type { UserConfig } from 'vitest/config';
 
 // https://vite.dev/config/
-export default defineConfig({
+const config: UserConfig = {
   plugins: [react(), tailwindcss()],
   resolve: {
     alias: {
@@ -16,4 +17,6 @@ export default defineConfig({
     environment: 'jsdom',
     setupFiles: './src/setupTests.ts',
   },
-});
+};
+
+export default defineConfig(config);
